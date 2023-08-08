@@ -383,14 +383,14 @@ public class AugmentedFacesActivity extends AppCompatActivity implements GLSurfa
         face.getCenterPose().toMatrix(modelMatrix, 0);
 
         //log das infos da face detectada
-        FloatBuffer uvs = face.getMeshTextureCoordinates();
+        /*FloatBuffer uvs = face.getMeshTextureCoordinates();
         Log.d(TAG, "UVs: " + uvs.toString());
         ShortBuffer indices = face.getMeshTriangleIndices();
         Log.d(TAG, "Indices: " + indices.toString());
         Pose facePose = face.getCenterPose();
-        Log.d(TAG, "Face Pose: " + facePose.toString());
+        Log.d(TAG, "Face Pose: " + facePose.toString());*/
         FloatBuffer faceVertices = face.getMeshVertices();
-        Log.d(TAG, "Face Vertices: " + faceVertices.toString());
+       //Log.d(TAG, "Face Vertices: " + faceVertices.toString());
         float[] tempArray = new float[faceVertices.remaining()];
         faceVertices.get(tempArray);
         faceVertices.rewind();
@@ -413,7 +413,7 @@ public class AugmentedFacesActivity extends AppCompatActivity implements GLSurfa
           stringBuilder.append("\n");
         }
 
-        Log.d(TAG, "Model Matrix:\n" + stringBuilder.toString());
+        //Log.d(TAG, "Model Matrix:\n" + stringBuilder.toString());
 
         //fim dos logs
 
@@ -508,20 +508,21 @@ public class AugmentedFacesActivity extends AppCompatActivity implements GLSurfa
         decimalFormat.setGroupingUsed(false);
 
         StringBuilder distancesStringBuilder = new StringBuilder();
-        distancesStringBuilder.append("between_eyebrows: ").append(Double.parseDouble(decimalFormat.format(distances * 100))).append(" cm\n");
+        distancesStringBuilder.append("between_eyebrows: ").append(distances * 100);
         distancesStringBuilder.append("adjustment_hatch: ").append(variableValue * 10).append("\n");
-        distancesStringBuilder.append("forehead_measurement: ").append(Double.parseDouble(decimalFormat.format(distancesForehead * 100))).append(" cm\n");
+        distancesStringBuilder.append("forehead_measurement: ").append(distancesForehead * 100);
         distancesStringBuilder.append("nose_coordinates_x: ").append(coordinatesNose[0]).append("\n");
         distancesStringBuilder.append("nose_coordinates_y: ").append(coordinatesNose[1]).append("\n");
         distancesStringBuilder.append("nose_coordinates_z: ").append(coordinatesNose[2]).append("\n");
-        distancesStringBuilder.append("leftear_measurement: ").append(Double.parseDouble(decimalFormat.format(distancesOfLeftEarToEye * 100))).append(" cm\n");
-        distancesStringBuilder.append("rightear_measurement: ").append(Double.parseDouble(decimalFormat.format(distancesOfRightEarToEye * 100))).append(" cm\n");
-        distancesStringBuilder.append("first_nose_z_comparison: ").append(Double.parseDouble(decimalFormat.format(comparisonNose1 * 100))).append(" cm\n");
-        distancesStringBuilder.append("second_nose_z_comparison: ").append(Double.parseDouble(decimalFormat.format(comparisonNose2 * 100))).append(" cm\n");
+        distancesStringBuilder.append("leftear_measurement: ").append(distancesOfLeftEarToEye * 100);
+        distancesStringBuilder.append("rightear_measurement: ").append(distancesOfRightEarToEye * 100);
+        distancesStringBuilder.append("first_nose_z_comparison: ").append(comparisonNose1 * 100);
+        distancesStringBuilder.append("second_nose_z_comparison: ").append(comparisonNose2 * 100);
 
         btnCameraActivity.setOnClickListener(new View.OnClickListener() {
           @Override
           public void onClick(View v) {
+            Log.e(TAG, "CLICKADO");
             long currentTimeMillis = System.currentTimeMillis();
             String titleWithTimestamp = "mesh_" + currentTimeMillis;
             String titleDistancesWithTimestamp = "distances_" + currentTimeMillis;
