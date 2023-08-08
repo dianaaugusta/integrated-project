@@ -1,0 +1,27 @@
+newmtl blinn1SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd wood06.jpg
+bump  -bm 0.1 wood06b.jpg
+Ni 1.00
+Ks 0.38 0.38 0.38
+newmtl blinn3SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd -s_0.5_0.5_gold.jpg
+bump  -bm 0.1 gold_copy.jpg
+Ni 1.00
+Ks 1.00 1.00 1.00
+newmtl lambert10SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd octg10L.jpg
+bump  -bm 1 octg10Lb.jpg
+Ni 1.00
+Ks 0.40 0.40 0.40

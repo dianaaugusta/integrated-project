@@ -1,0 +1,82 @@
+<!--
+   Copyright 2016 Google LLC
+
+   Licensed under the Apache License, Version 2.0 (the "License");
+   you may not use this file except in compliance with the License.
+   You may obtain a copy of the License at
+
+      http://www.apache.org/licenses/LICENSE-2.0
+
+   Unless required by applicable law or agreed to in writing, software
+   distributed under the License is distributed on an "AS IS" BASIS,
+   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+   See the License for the specific language governing permissions and
+   limitations under the License.
+-->
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.google.ar.core.examples.java.augmentedfaces.AugmentedFacesActivity">
+
+  <android.opengl.GLSurfaceView
+      android:id="@+id/surfaceview"
+      android:layout_width="fill_parent"
+      android:layout_height="fill_parent"
+      android:layout_gravity="top" />
+
+  <LinearLayout
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:orientation="horizontal">
+
+    <Button
+        android:id="@+id/buttonTest"
+        android:layout_width="109dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="267dp"
+        android:layout_marginTop="645dp"
+        android:layout_marginEnd="35dp"
+        android:layout_marginBottom="39dp"
+        android:text="distances" />
+  </LinearLayout>
+
+  <LinearLayout
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:orientation="vertical">
+
+    <Button
+        android:id="@+id/btnCameraAct"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="camera" />
+
+    <SeekBar
+        android:id="@+id/slider"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:max="100"
+        android:progress="50" />
+    <TextView
+        android:id="@+id/txtAjuste"
+        android:layout_width="match_parent"
+        android:layout_height="38dp"
+        android:text="0.0%" />
+
+    <Switch
+        android:id="@+id/swDebugGlasses"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Deactivate Glasses" />
+
+    <TextView
+        android:id="@+id/txtApproachDistance"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="TextView" />
+
+
+  </LinearLayout>
+
+</RelativeLayout>
