@@ -1,1 +1,1 @@
-just a arcore project pls dont sue
+Using ARCore, this application detects various points on the face, along with their respective information and coordinates in the world, distances between points, including depth, and detects the mesh of your face, making it possible to export and use it for facial recognition, image filters, and more.
